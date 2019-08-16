@@ -187,10 +187,18 @@ class Machine {
   }
 
   reboot(){
-  // function(){
-  //     this.wear_and_tear_count -= 10;
-  //     this.needs_reboot = false;
-  //   }
+    // automatically binds
+    return () => {
+      this.wear_and_tear_count -= 10;
+      this.needs_reboot = false;
+    }
+
+    //explicit
+    // let anon = function(){
+    //   this.wear_and_tear_count -= 10;
+    //   this.needs_reboot = false;
+    // };
+    // return anon.bind(this)
   }
 }
 
